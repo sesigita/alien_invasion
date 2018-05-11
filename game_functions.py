@@ -67,10 +67,7 @@ def start_game(ai_settings, stats, sb, screen, ship, aliens, bullets):
   stats.reset_stats()
   # ai_settings.initialize_dynamic_settings()
   stats.game_active = True
-  sb.prep_score()
-  sb.prep_high_score()
-  sb.prep_level()
-  sb.prep_ships()
+  sb.prep_images()
   aliens.empty()
   bullets.empty()
 
