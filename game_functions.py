@@ -5,6 +5,8 @@ from bullet import Bullet
 from alien import Alien
 from time import sleep
 
+
+
 def check_keydown_events(event, ai_settings, stats, sb, screen, ship, aliens, bullets):  
   if event.key == pygame.K_RIGHT:
     ship.moving_right = True
@@ -18,8 +20,10 @@ def check_keydown_events(event, ai_settings, stats, sb, screen, ship, aliens, bu
     start_game(ai_settings, stats, sb, screen, ship, aliens, bullets)
 
 def fire_bullets(ai_settings, screen, ship, bullets):
+  bullet_sound = pygame.mixer.Sound(r"C:\Users\Sigita\Desktop\python_work\Part II\alien_invasion\Arrow_Swoosh_1.wav")
   if len(bullets) < ai_settings.bullets_allowed:
     new_bullet = Bullet(ai_settings, screen, ship)
+    pygame.mixer.Sound.play(bullet_sound)
     bullets.add(new_bullet)
 
 def check_keyup_events(event, ship):
